@@ -4,11 +4,20 @@ server:
 spring:
   datasource:
     # 每次运行时初始化数据库，如不需要可以注释掉
-    initialization-mode: always
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://192.168.99.100:3306/white_jotter?characterEncoding=utf-8&useSSL=false
-    username: root
-    password: root
+#    initialization-mode: always
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.99.100:3306/white_jotter?characterEncoding=utf-8&useSSL=false
+#    username: root
+#    password: root
+    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://ec2-3-232-22-121.compute-1.amazonaws.com:5432/dd7h9kf91l6rta
+#    username: bducqrkuphqekw
+#    password: bd1b393b584b7e917265ce7cd40e061058ba496a8587943d391bf14eeadb8a1a
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
+    hikari:
+      maximum-pool-size: 5
 
   jpa:
     hibernate:
