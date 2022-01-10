@@ -1,0 +1,15 @@
+server:
+  port: 8443
+
+spring:
+  datasource:
+    # 每次运行时初始化数据库，如不需要可以注释掉
+    initialization-mode: always
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.99.100:3306/white_jotter?characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+
+  jpa:
+    hibernate:
+      ddl-auto: update
