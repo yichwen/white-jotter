@@ -42,8 +42,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .httpBasic().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.authorizeRequests()
-                .antMatchers("/api/login", "/static/**", "/index.html", "/").permitAll()
-                .anyRequest().authenticated();
+                .antMatchers("/api/admin/**").authenticated()
+//                .antMatchers("/api/login", "/static/**", "/index.html", "/").permitAll()
+                .anyRequest().permitAll();
 
 //        JwtAuthenticationFilter jwtAuthenticationFilter = new JwtAuthenticationFilter(jwtUtil);
 //        jwtAuthenticationFilter.setAuthenticationManager(authenticationManager());

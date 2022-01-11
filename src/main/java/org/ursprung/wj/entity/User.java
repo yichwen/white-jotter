@@ -7,7 +7,7 @@ import java.util.Collection;
 
 @Data
 @Entity
-@Table(name = "user")
+@Table(name = "admin_user")
 // 因为是做前后端分离，而前后端数据交互用的是 json 格式。
 // 那么 User 对象就会被转换为 json 数据。
 // 而本项目使用 jpa 来做实体类的持久化，jpa 默认会使用 hibernate, 在 jpa 工作过程中，就会创造代理类来继承 User
