@@ -10,15 +10,20 @@ spring:
 #    username: root
 #    password: root
     driver-class-name: org.postgresql.Driver
-#    url: jdbc:postgresql://ec2-3-232-22-121.compute-1.amazonaws.com:5432/dd7h9kf91l6rta
-#    username: bducqrkuphqekw
-#    password: bd1b393b584b7e917265ce7cd40e061058ba496a8587943d391bf14eeadb8a1a
-    url: ${JDBC_DATABASE_URL}
-    username: ${JDBC_DATABASE_USERNAME}
-    password: ${JDBC_DATABASE_PASSWORD}
+    url: jdbc:postgresql://localhost:5432/wj
+    username: postgres
+    password: password
+#    url: ${JDBC_DATABASE_URL}
+#    username: ${JDBC_DATABASE_USERNAME}
+#    password: ${JDBC_DATABASE_PASSWORD}
     hikari:
       maximum-pool-size: 5
 
   jpa:
     hibernate:
       ddl-auto: update
+    properties:
+      hibernate:
+        temp:
+          # Meant to hide HHH000424: Disabling contextual LOB creation as createClob() method threw error
+          use_jdbc_metadata_defaults: false
